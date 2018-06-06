@@ -1,0 +1,52 @@
+﻿<Window x:Name="settingWindow" x:Class="WpfApp1.SettingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="设置" Height="400" Width="400" Background="White" Closing="ClosingSettingWindow" ResizeMode="CanMinimize" Icon="/images/setting.png">
+    <Grid Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="16*"/>
+        </Grid.ColumnDefinitions>
+        <!--音量-->
+        <TextBlock HorizontalAlignment="Left" Margin="30,30,0,0"  TextWrapping="Wrap" Text="音量" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="90,30,0,0"  TextWrapping="Wrap" Text="{Binding Path=Value,ElementName=volume}" VerticalAlignment="Top"/>
+        <Slider x:Name="volume"  HorizontalAlignment="Left" Minimum="0"  Maximum="15" TickFrequency="1" TickPlacement="BottomRight" IsSnapToTickEnabled="True" SmallChange="1" Margin="30,60,0,0" Width="320" Height="30" VerticalAlignment="Top" Value="5" Grid.ColumnSpan="2"></Slider>
+        <TextBlock HorizontalAlignment="Left" Margin="30,90,0,0"  TextWrapping="Wrap"
+                   Text="0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="135,90,0,0"  TextWrapping="Wrap"
+                   Text="5" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="235,90,0,0"  TextWrapping="Wrap"
+                   Text="10" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="71,90,0,0"  TextWrapping="Wrap"
+                   Text="15" VerticalAlignment="Top" Grid.Column="1"/>
+        <!--语速-->
+        <TextBlock HorizontalAlignment="Left" Margin="30,120,0,0"  TextWrapping="Wrap" Text="语速" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="90,120,0,0"  TextWrapping="Wrap" Text="{Binding Path=Value,ElementName=speed}" VerticalAlignment="Top"/>
+        <Slider x:Name="speed"  HorizontalAlignment="Left" Minimum="0"  Maximum="9" TickFrequency="1" TickPlacement="BottomRight" IsSnapToTickEnabled="True" SmallChange="1" Margin="30,150,0,0" Width="320" Height="30" VerticalAlignment="Top" Value="5" Grid.ColumnSpan="2"></Slider>
+        <TextBlock HorizontalAlignment="Left" Margin="30,180,0,0"  TextWrapping="Wrap"
+                   Text="0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="135,180,0,0"  TextWrapping="Wrap"
+                   Text="3" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="235,180,0,0"  TextWrapping="Wrap"
+                   Text="6" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="71,180,0,0"  TextWrapping="Wrap"
+                   Text="9" VerticalAlignment="Top" Grid.Column="1"/>
+        <!--声音-->
+        <TextBlock HorizontalAlignment="Left" Margin="30,210,0,0"  TextWrapping="Wrap" Text="声音" VerticalAlignment="Top"/>
+        <ComboBox x:Name="voice" HorizontalAlignment="Left" Margin="30,240,0,0" Width="320" Height="25" 
+                  VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <ComboBoxItem Content="女声" IsSelected="True"></ComboBoxItem>
+            <ComboBoxItem Content="男声"></ComboBoxItem>
+            <ComboBoxItem Content="度逍遥"></ComboBoxItem>
+            <ComboBoxItem Content="度丫丫"></ComboBoxItem>
+        </ComboBox>
+        <!--<TextBlock HorizontalAlignment="Center" Margin="112.431,326.88,112.431,26.88"  TextWrapping="Wrap" 
+                   Text="Designed by Bingqiang Zhou" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Center" Margin="88.473,296.88,88.473,56.88"  TextWrapping="Wrap" 
+                   Text="Contact author:1299050656@qq.com" VerticalAlignment="Center" Grid.ColumnSpan="2"/>-->
+    </Grid>
+</Window>

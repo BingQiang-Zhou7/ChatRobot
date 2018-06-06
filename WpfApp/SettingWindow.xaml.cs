@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace WpfApp1
+{
+    /// <summary>
+    /// SettingWindow.xaml 的交互逻辑
+    /// </summary>
+    public partial class SettingWindow : Window
+    {
+        public SettingWindow()
+        {
+            InitializeComponent();
+            
+            speed.Value = App.Speed;
+            volume.Value = App.Volume;
+            voice.SelectedIndex = App.Voice;
+        }
+
+        private void ClosingSettingWindow(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            App.Speed = (int)speed.Value;
+            App.Volume = (int)volume.Value;
+            App.Voice = voice.SelectedIndex;
+        }
+    }
+}
